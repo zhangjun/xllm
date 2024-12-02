@@ -12,7 +12,9 @@ from transformers import AutoTokenizer, HfArgumentParser
 
 from .kv_cache import KVQuantizeArguments, kv_cache_quantize
 from .utils import CalibDataLoader, copy_hf_config_files, save_model
-from utils.load_model import load_hf_model
+from .utils.load_model import load_hf_model
+from .qlinear import FP8BmmQuantLinear, FP8QuantLinear
+
 
 from .utils_helper import (
     clear_memory,
