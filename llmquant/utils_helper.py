@@ -1,5 +1,7 @@
 import contextlib
 import copy
+import enum
+import inspect
 import gc
 from typing import Dict, List, Optional, Tuple, Union
 
@@ -9,8 +11,6 @@ from torch import nn
 from transformers.activations import GELUActivation, NewGELUActivation, PytorchGELUTanh
 from transformers.models.llama.modeling_llama import LlamaRMSNorm
 from transformers.models.qwen2.modeling_qwen2 import Qwen2RMSNorm
-
-from crossingbits.utils.helper import can_accept_argument
 
 allowed_norms = [nn.LayerNorm, LlamaRMSNorm, Qwen2RMSNorm]
 allowed_gelu_fns = Union[nn.GELU, NewGELUActivation, PytorchGELUTanh, GELUActivation]

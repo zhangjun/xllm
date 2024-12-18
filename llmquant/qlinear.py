@@ -14,7 +14,8 @@ from crossing.core.operators_plugin_registry import OperatorsPluginRegistry
 from crossing.quant.quant_context import ActQuantType
 from crossing.quant.quant_kernel_dispatcher import QuantKernelDispatcherPluginRegistry
 from crossing.quant.quant_weight_converter import QuantWeightConverterPluginRegistry
-from crossingbits.utils.helper import DEBUG
+
+from llmquant.utils.helper import DEBUG
 
 E4M3_MAX_POS = torch.finfo(torch.float8_e4m3fn).max
 E5M2_MAX_POS = torch.finfo(torch.float8_e5m2).max

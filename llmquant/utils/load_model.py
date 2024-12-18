@@ -12,13 +12,12 @@ from transformers import AutoConfig, AutoModelForCausalLM
 from crossing.core.causal_lm_text_generation_engine_base import KernelDispatcher
 from crossing.core.nn import W8A8QuantLinear
 from crossing.core.operators_plugin_registry import OperatorsPluginRegistry
-from crossingbits.qmodules import FP8QuantLinear, QuantLinear
-from crossingbits.quantize import Quantizer, QuantType
-from crossingbits.quantize.fp8_quant import FP8Quantizer
-from crossingbits.quantize.utils import get_layers_to_quantize
-from utils.helper import DEBUG
 
-from .skip_init import skip_init
+from llmquant.qlinear import FP8QuantLinear, QuantLinear
+from llmquant.fp8_quant import FP8Quantizer, Quantizer
+from llmquant.utils_helper import get_layers_to_quantize, QuantType
+from llmquant.utils.helper import DEBUG
+from llmquant.utils.skip_init import skip_init
 
 
 def load_hf_model(model_name_or_path: Union[str, Path], dtype: torch.dtype):

@@ -8,10 +8,10 @@ from torch import nn
 from tqdm import tqdm
 from transformers.cache_utils import DynamicCache
 
-from .utils.helper import DEBUG, can_accept_argument
+from llmquant.utils.helper import DEBUG, can_accept_argument
 
-from .quantizer import QuantizerMixin
-from .utils_helper import get_layers_to_quantize, get_model_inputs, get_num_heads
+from llmquant.fp8_quant import QuantizerMixin
+from llmquant.utils_helper import get_layers_to_quantize, get_model_inputs, get_num_heads
 
 
 @dataclass

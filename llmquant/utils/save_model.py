@@ -4,7 +4,6 @@ from pathlib import Path
 import torch
 from torch import nn
 
-
 def save_model(model: nn.Module, save_dir: Path, safetensors: bool = True):
     if safetensors:
         # Some `generation_config` set the temperature > 0, but also set `do_sample` to False.
