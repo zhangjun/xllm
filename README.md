@@ -21,6 +21,8 @@ A brief description of your project and its purpose.
 3. Install dependencies:
     ```bash
     git submodule update --init --recursive
+    git submodule add -b sgl-kernel https://github
+.com/sgl-project/sgl-attn.git sgl-kernel/3rdparty/sgl-attn
     ```
 
 ## Usage

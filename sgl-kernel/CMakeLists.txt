@@ -33,32 +33,36 @@ include(FetchContent)
 FetchContent_Declare(
     repo-cutlass
     GIT_REPOSITORY https://github.com/NVIDIA/cutlass
-    GIT_TAG        df8a550d3917b0e97f416b2ed8c2d786f7f686a3
-    GIT_SHALLOW    OFF
+    SOURCE_DIR "${CMAKE_SOURCE_DIR}/3rdparty/cutlass"
+    # GIT_TAG        df8a550d3917b0e97f416b2ed8c2d786f7f686a3
+    # GIT_SHALLOW    OFF
 )
 FetchContent_Populate(repo-cutlass)
 # DeepGEMM
 FetchContent_Declare(
     repo-deepgemm
-    GIT_REPOSITORY https://github.com/deepseek-ai/DeepGEMM
-    GIT_TAG        c187c23ba8dcdbad91720737e8be9c43700cb9e9
-    GIT_SHALLOW    OFF
+    SOURCE_DIR "${CMAKE_SOURCE_DIR}/3rdparty/DeepGEMM"
+    # GIT_REPOSITORY https://github.com/deepseek-ai/DeepGEMM
+    # GIT_TAG        c187c23ba8dcdbad91720737e8be9c43700cb9e9
+    # GIT_SHALLOW    OFF
 )
 FetchContent_Populate(repo-deepgemm)
 # flashinfer
 FetchContent_Declare(
     repo-flashinfer
-    GIT_REPOSITORY https://github.com/sgl-project/flashinfer
-    GIT_TAG        sgl-kernel
-    GIT_SHALLOW    OFF
+    SOURCE_DIR "${CMAKE_SOURCE_DIR}/3rdparty/flashinfer"
+    # GIT_REPOSITORY https://github.com/sgl-project/flashinfer
+    # GIT_TAG        sgl-kernel
+    # GIT_SHALLOW    OFF
 )
 FetchContent_Populate(repo-flashinfer)
 # flash-attention
 FetchContent_Declare(
     repo-flash-attention
-    GIT_REPOSITORY https://github.com/sgl-project/sgl-attn
-    GIT_TAG        sgl-kernel
-    GIT_SHALLOW    OFF
+    SOURCE_DIR "${CMAKE_SOURCE_DIR}/3rdparty/sgl-attn"
+    # GIT_REPOSITORY https://github.com/sgl-project/sgl-attn
+    # GIT_TAG        sgl-kernel
+    # GIT_SHALLOW    OFF
 )
 FetchContent_Populate(repo-flash-attention)
 
