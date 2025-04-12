@@ -52,8 +52,8 @@ Contributions are welcome! Please follow these steps:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache License](LICENSE).
 
 ## Contact
 
-For questions or feedback, please contact [your-email@example.com].
+For questions or feedback, please contact [ewalker@live.cn].
