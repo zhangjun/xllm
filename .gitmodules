@@ -1,0 +1,7 @@
+[submodule "sgl-kernel/3rdparty/sgl-attn"]
+	path = sgl-kernel/3rdparty/sgl-attn
+	url = https://github.com/sgl-project/sgl-attn.git
+	branch = sgl-kernel
+[submodule "sgl-kernel/3rdparty/DeepGEMM"]
+	path = sgl-kernel/3rdparty/DeepGEMM
+	url = https://github.com/deepseek-ai/DeepGEMM@c187c23ba8dcdbad91720737e8be9c43700cb9e9
