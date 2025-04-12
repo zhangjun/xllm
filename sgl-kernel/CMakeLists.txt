@@ -115,6 +115,8 @@ option(SGL_KERNEL_ENABLE_BF16   "Enable BF16"   ON)
 option(SGL_KERNEL_ENABLE_FP8    "Enable FP8"    ON)
 option(SGL_KERNEL_ENABLE_FP4    "Enable FP4"    OFF)
 
+option(SGL_KERNEL_ENABLE_EXTRA   "Enable extra build"   OFF)
+
 if ("${CUDA_VERSION}" VERSION_GREATER_EQUAL "12.8" OR SGL_KERNEL_ENABLE_SM100A)
     list(APPEND SGL_KERNEL_CUDA_FLAGS
         "-gencode=arch=compute_100,code=sm_100"
@@ -147,6 +149,12 @@ if (SGL_KERNEL_ENABLE_FP8)
     )
 endif()
 
+if (SGL_KERNEL_ENABLE_EXTRA)
+    list(APPEND SGL_KERNEL_CUDA_FLAGS
+        "-DEXTRA"
+    )
+endif()
+
 if ("${CUDA_VERSION}" VERSION_GREATER_EQUAL "12.8" OR SGL_KERNEL_ENABLE_FP4)
     list(APPEND SGL_KERNEL_CUDA_FLAGS
         "-DENABLE_NVFP4=1"
@@ -167,6 +175,7 @@ set(SOURCES
     "csrc/elementwise/rope.cu"
     "csrc/gemm/awq_kernel.cu"
     "csrc/gemm/bmm_fp8.cu"
+    "csrc/gemm/cublas_grouped_gemm.cu"
     "csrc/gemm/fp8_blockwise_gemm_kernel.cu"
     "csrc/gemm/fp8_gemm_kernel.cu"
     "csrc/gemm/int8_gemm_kernel.cu"

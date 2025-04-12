@@ -288,3 +288,11 @@ void top_p_sampling_from_probs(
     double top_p_val,
     bool deterministic,
     int64_t cuda_stream);
+// extra
+void cublas_grouped_gemm(
+    const std::vector<torch::Tensor>& inputs,
+    const std::vector<torch::Tensor>& weights,
+    const std::vector<torch::Tensor>& outputs,
+    const torch::Dtype& out_dtype,
+    int64_t cublas_handle,
+    int64_t cuda_stream);

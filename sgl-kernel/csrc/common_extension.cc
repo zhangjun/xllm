@@ -206,6 +206,14 @@ TORCH_LIBRARY_FRAGMENT(sgl_kernel, m) {
       "top_p_sampling_from_probs(Tensor probs, Tensor uniform_samples, Tensor! samples, Tensor! success, Tensor? "
       "maybe_top_p_arr, float top_p_val, bool deterministic, int cuda_stream) -> ()");
   m.impl("top_p_sampling_from_probs", torch::kCUDA, &top_p_sampling_from_probs);
+
+  // extra
+#ifdef ENABLE_EXTRA
+  m.def(
+    "cublas_grouped_gemm(Tensor[] inputs, Tensor[] weights, Tensor[] outputs,"
+    " ScalarType out_dtype, int cublas_handle, int cuda_stream) -> ()");
+    m.impl("cublas_grouped_gemm", torch::kCUDA, &cublas_grouped_gemm);
+#endif
 }
 
 REGISTER_EXTENSION(common_ops)

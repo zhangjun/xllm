@@ -38,6 +38,7 @@ from sgl_kernel.gemm import (
     sgl_per_token_group_quant_fp8,
     sgl_per_token_group_quant_int8,
     sgl_per_token_quant_fp8,
+    cublas_grouped_gemm,
 )
 from sgl_kernel.moe import moe_align_block_size, moe_fused_gate, topk_softmax
 from sgl_kernel.sampling import (
