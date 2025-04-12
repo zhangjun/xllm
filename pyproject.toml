@@ -1,0 +1,48 @@
+[build-system]
+requires = [
+  "scikit-build-core>=0.10",
+  # "torch>=2.5.1",
+  "wheel",
+]
+build-backend = "scikit_build_core.build"
+
+# requires = ["hatchling"]
+# build-backend = "hatchling.build"
+
+[project]
+name = "sgl-kernel"
+version = "0.0.8.post1"
+description = "Kernel Library for SGLang"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Environment :: GPU :: NVIDIA CUDA"
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/sgl-project/sglang/tree/main/sgl-kernel"
+"Bug Tracker" = "https://github.com/sgl-project/sglang/issues"
+
+[tool.wheel]
+exclude = [
+  "dist*",
+  "tests*",
+]
+
+[tool.ruff]
+# target-version = "py38"
+line-length = 119
+indent-width = 4
+
+[tool.scikit-build]
+cmake.build-type = "Release"
+cmake.source-dir = "sgl-kernel/"
+minimum-version = "build-system.requires"
+# build-dir = "build/{wheel_tag}"
+
+# wheel.py-api = "cp39"
+wheel.packages = ["sgl-kernel/python/sgl_kernel"]
