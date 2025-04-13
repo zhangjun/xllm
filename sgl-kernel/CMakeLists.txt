@@ -32,8 +32,8 @@ include(FetchContent)
 # cutlass
 FetchContent_Declare(
     repo-cutlass
-    GIT_REPOSITORY https://github.com/NVIDIA/cutlass
     SOURCE_DIR "${CMAKE_SOURCE_DIR}/3rdparty/cutlass"
+    # GIT_REPOSITORY https://github.com/NVIDIA/cutlass
     # GIT_TAG        df8a550d3917b0e97f416b2ed8c2d786f7f686a3
     # GIT_SHALLOW    OFF
 )
@@ -96,9 +96,9 @@ set(SGL_KERNEL_CUDA_FLAGS
     "-O3"
     "-Xcompiler"
     "-fPIC"
-    "-gencode=arch=compute_75,code=sm_75"
-    "-gencode=arch=compute_80,code=sm_80"
-    "-gencode=arch=compute_89,code=sm_89"
+    # "-gencode=arch=compute_75,code=sm_75"
+    # "-gencode=arch=compute_80,code=sm_80"
+    # "-gencode=arch=compute_89,code=sm_89"
     "-gencode=arch=compute_90,code=sm_90"
     "-std=c++17"
     "-DFLASHINFER_ENABLE_F16"
