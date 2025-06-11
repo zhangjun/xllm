@@ -33,9 +33,9 @@ for idx, item in enumerate(data):
         round(item['mean_e2e_latency_ms'] * 0.001, 2),
         round(1/item['mean_tpot_ms'] * 1000, 3),
         round(np.mean(item['input_lens'] or 0), 2),
-        f"[{np.min(item['input_lens'] or 0)},{np.max(item['input_lens'] or 0)}]:{np.std(item['input_lens'] or 0)}",
+        f"[{np.min(item['input_lens'] or 0)},{np.max(item['input_lens'] or 0)}]:{round(np.std(item['input_lens'] or 0), 2)}",
         round(np.mean(item['output_lens'] or 0), 2),
-        f"[{np.min(item['output_lens'] or 0)},{np.max(item['output_lens'] or 0)}]:{np.std(item['output_lens'] or 0)}",
+        f"[{np.min(item['output_lens'] or 0)},{np.max(item['output_lens'] or 0)}]:{round(np.std(item['output_lens'] or 0), 2)}",
     ]
     df.loc[idx + 1] = value
 
