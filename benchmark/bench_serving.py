@@ -130,7 +130,7 @@ async def async_request_openai(
                             # usage summary response without a token so we
                             # want to check a token was generated
                             # "text"
-                            if 'usage' in data:
+                            if data.get('usage'):
                                 output.prompt_len = data['usage']['prompt_tokens']
                                 output.output_len = data['usage']['completion_tokens']
                             if len(data['choices']) == 0:
@@ -179,7 +179,7 @@ async def async_request_openai(
                                         output.itl.append(timestamp - most_recent_timestamp)
 
                                     most_recent_timestamp = timestamp
-                                    generated_text += data["choices"][0]["delta"]["text"]
+                                    generated_text += data["choices"][0]["text"]
                     output.generated_text = generated_text
                     output.success = True
                     output.latency = latency
