@@ -1,6 +1,7 @@
 import json
 import os
 import asyncio
+from typing import Optional
 from transformers import AutoTokenizer
 import torch
 from vllm.engine.arg_utils import AsyncEngineArgs
